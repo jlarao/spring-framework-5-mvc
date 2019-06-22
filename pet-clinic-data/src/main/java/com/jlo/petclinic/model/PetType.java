@@ -1,6 +1,6 @@
-package com.jlo.petclinic.model;
+package    com.jlo.petclinic.model;
 
-public class PetType {
+public class PetType extends BaseEntity{
     private String name;
 
     public String getName() {
