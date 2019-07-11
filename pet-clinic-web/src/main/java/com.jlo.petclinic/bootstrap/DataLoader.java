@@ -7,16 +7,22 @@ import com.jlo.petclinic.services.VetService;
 import com.jlo.petclinic.services.map.OwnerServiceMap;
 import com.jlo.petclinic.services.map.VetSerciceMap;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 import sun.tools.jar.CommandLine;
 
+@Component
 public class DataLoader implements CommandLineRunner {
     private  final OwnerService ownerService;
     private  final VetService vetService;
 
-    public DataLoader() {
+   /* public DataLoader() {
         ownerService = new OwnerServiceMap();
         vetService = new VetSerciceMap();
-    }
+    }*/
+   public DataLoader(OwnerService ownerService, VetService vetService) {
+       this.ownerService = ownerService;
+       this.vetService = vetService;
+   }
 
     @Override
     public void run(String... args) throws Exception {
