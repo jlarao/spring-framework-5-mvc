@@ -1,8 +1,11 @@
 package com.jlo.petclinic.bootstrap;
 
 import com.jlo.petclinic.model.Owner;
+import com.jlo.petclinic.model.PetType;
 import com.jlo.petclinic.model.Vet;
 import com.jlo.petclinic.services.OwnerService;
+import com.jlo.petclinic.services.PetService;
+import com.jlo.petclinic.services.PetTypeService;
 import com.jlo.petclinic.services.VetService;
 import com.jlo.petclinic.services.map.OwnerServiceMap;
 import com.jlo.petclinic.services.map.VetSerciceMap;
@@ -14,18 +17,27 @@ import sun.tools.jar.CommandLine;
 public class DataLoader implements CommandLineRunner {
     private  final OwnerService ownerService;
     private  final VetService vetService;
-
+    private  final PetTypeService petTypeService;
    /* public DataLoader() {
         ownerService = new OwnerServiceMap();
         vetService = new VetSerciceMap();
     }*/
-   public DataLoader(OwnerService ownerService, VetService vetService) {
+   public DataLoader(OwnerService ownerService, VetService vetService,PetTypeService petTypeService) {
        this.ownerService = ownerService;
        this.vetService = vetService;
+       this.petTypeService = petTypeService;
    }
 
     @Override
     public void run(String... args) throws Exception {
+        PetType dog = new PetType();
+        dog.setName("dog");
+        PetType saveDogPetType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("cat");
+        PetType saveCatPetType = petTypeService.save(cat);
+
         Owner owner1 = new Owner();
        // owner1.setId(1L);
         owner1.setFirstName("Michael");
