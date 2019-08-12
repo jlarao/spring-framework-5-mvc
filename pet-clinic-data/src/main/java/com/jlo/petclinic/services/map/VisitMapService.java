@@ -3,12 +3,14 @@ package com.jlo.petclinic.services.map;
 import com.jlo.petclinic.model.Visit;
 import com.jlo.petclinic.services.VisitService;
 import net.bytebuddy.implementation.bytecode.Throw;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.Lob;
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
