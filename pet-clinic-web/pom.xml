@@ -161,15 +161,15 @@
                       \-\-illegal-access=permit
                       </argLine>
                   </configuration>-->
-                <dependencies>
-                    <dependency>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>RELEASE</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+                <!--     <dependencies>
+                        <dependency>
+                            <groupId>org.junit.platform</groupId>
+                            <artifactId>junit-platform-surefire-provider</artifactId>
+                            <version>RELEASE</version>
+                        </dependency>
+                    </dependencies> -->
+                </plugin>
 
-        </plugins>
-    </build>
-</project>
+            </plugins>
+        </build>
+    </project>
