@@ -1,1 +1,2 @@
 com\jlo\petclinic\services\map\OwnerServiceMapTest.class
+com\jlo\petclinic\services\springdatajpa\OwnerSDJpaServiceTest.class
